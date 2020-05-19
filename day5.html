@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <style>
+            input[type=submit]{
+                background-color:#4CAF50;
+                border: darkcyan;
+                color: rgb(10, 10, 10);
+                padding: 16px 32px;
+                text-decoration: rgba(11, 82, 235, 0.904);
+                margin: 4px 2px;
+            }
+            span{
+                color: rgb(5, 5, 5);
+                font-size: medium;
+                font-weight: bold;
+                font-family:'Times New Roman';
+                background-color: rgb(245, 3, 3);
+
+            }
+            </style>
+        </head>
+    <body>
+        <div style="color: rgb(5, 7, 8); text-align: center;font-family: 'Times New Roman'; font-weight: 200;font-style: normal; font-size: medium;">
+        <h1>Form validation</h1>
+        
+        <form text-align="center" onsubmit="return valid()">
+         <fieldset>
+           User-ID:<input type="text" id="user"><br>
+            <span id="1"></span><br><br>
+           Password:<input type="password" id="pass"><br>
+           <span id="2"></span><br><br>
+           Mobile no:<input type="text" id="mob"><br>
+           <span id="3"></span><br><br>
+            Address:<input type="text" id="add"><br>
+            <span id="4"></span><br><br>
+           Age:<input type="text" id="age"><br>
+           <span id="5"></span><br><br>
+           <input type="submit" id="sub" value="submit"><br><br>
+         </fieldset>
+          </form>
+          </div>
+        <script>
+            function valid()
+            {
+
+                var user=document.getElementById("user").value;
+                        var pass=document.getElementById("pass").value; 
+                            var mob=document.getElementById("mob").value;
+                               var add=document.getElementById("add").value;
+                                    var age=document.getElementById("age").value;
+         if(user=="")
+             {
+         document.getElementById("1").innerHTML=" **All text fields are mandatory";
+         return false;
+             }
+             if((user.length<3) ||(user.length>=15))
+             {
+         document.getElementById("1").innerHTML=" **User-Id must be min 3 and max 15 characters";
+         return false;
+             }
+         if(pass=="")
+             {
+         document.getElementById("2").innerHTML=" **All text fields are mandatory";
+         return false;
+             }
+             if(pass.length<=8)
+             {
+         document.getElementById("2").innerHTML=" **Password must be min 8 characters";
+         return false;
+             }
+        
+         if(mob=="")
+             {
+         document.getElementById("3").innerHTML=" **All text fields are mandatory";
+         return false;
+             }
+             if(isNaN(mob))
+             {
+         document.getElementById("3").innerHTML=" **Mobile number should contain number only";
+         return false;
+             }
+             if(mob.length!=10)
+             {
+         document.getElementById("3").innerHTML=" **Mobile number should contain 10 number";
+         return false;
+             }
+         if(add=="")
+             {
+         document.getElementById("4").innerHTML=" **All text fields are mandatory";
+         return false;
+             }
+         if(age=="")
+             {
+         document.getElementById("5").innerHTML=" **All text fields are mandatory";
+         return false;
+             }
+             if((age<=18) ||(age>=100))
+             {
+         document.getElementById("5").innerHTML="Age must be between 18 to 100";
+         return false;
+             }
+            
+     
+            }
+            </script>
+        </body>
+</html>
