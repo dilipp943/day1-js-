@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8</title>
+</head>
+<body>
+    <p><h1>Class Employee Task</h1></p>
+ 
+    <script>
+class Employee
+{
+                  set Id(i)
+                    {
+                    this.id = i;
+                    }
+                   set Name(n)
+                    {
+                        this.name = n;
+                        }
+                        set Salary(s)
+                         {    
+                                this.salary = s;
+                         }
+
+        
+                get Id()
+                {
+                    return this.id;
+                }
+
+                get Name()
+                {
+                    return  this.name;
+                }
+
+                get Salary()
+                {
+                   return this.salary;
+                }
+
+                get NetSalary()
+                {
+                    return this.netSalary;
+                }
+
+                
+                NetSalary()
+                {
+                    let TDS = 0.1;
+                    this.netSalary = this.salary - (TDS*this.salary);
+                }
+
+                
+                   
+                    show()
+                    {    
+                 document.write("<b><h3>Employee Details</h3></b><br/>");
+                    document.write("<b>ID:</b> "+this.id);
+                    document.write("<b><br/>Name:</b> "+this.name);
+                    document.write("<b><br/>Salary: </b>"+this.salary);
+                    document.write("<b><br/>Net Salary: </b>"+this.netSalary+"<br/><br/>");
+                    }
+  }
+
+            e1 = new Employee;
+            e2 = new Employee;
+            e1.Salary = 40000;
+            e1.Id=1001;
+            e1.Name="Dilip Patil";
+            e1.NetSalary();
+            e1.show();
+            e2.Salary =46000;
+            e2.Id=1002;
+            e2.Name="Pradeep Patil";
+            e2.NetSalary();
+            e2.show();
+
+
+class Student{
+               
+                get getRollNumber()
+                {
+                    return this.rollNumber;
+                }
+
+                get getName()
+                {
+                    return this.name;
+                }
+
+                get getMarks1()
+                {
+                    return this.marks1;
+                }
+
+                get getMarks2()
+                {
+                    return this.marks2;
+                }
+
+                get getMarks3()
+                {
+                    return this.marks3;
+                }
+
+                set setRollNumber(r1)
+                {
+                   
+                this.rollNumber =r1;
+                  
+                   
+                }
+
+                set setName(n1)
+                {
+                  
+                        this.name=n1;
+                  }
+                
+                    
+                
+
+                set setMarks1(tm1)
+                {
+             this.marks1 = tm1;
+                 
+                }
+
+                set setMarks2(tm2)
+                {
+                        this.marks2 = tm2;
+                   
+                }
+
+                set setMarks3(tm3)
+                {
+            
+                   this.marks3 = tm3;
+           
+                }
+
+
+                calculateTotalMarks()
+                {
+                    this.total = this.marks1 + this.marks2 + this.marks3;
+                }
+
+                calculatePercentage()
+                {
+                this.percentage  = (this.total/300)*100;
+                 }
+                show()
+                {
+                    document.write("<h3><b>Student Details</b></h3>");
+        document.write("</br><b>Roll No.:</b>"+this.rollNumber);
+        document.write("</br><b>Name:</b>"+this.name);   
+        document.write("</br><b>Physics:</b>"+this.marks1);
+        document.write("</br><b>Chemistry:</b>"+this.marks2);
+        document.write("</br><b>Maths:</b>"+this.marks3);
+        document.write("</br><b>Total:</b>"+this.total);
+       document.write("<br/><b>Percentage:</b> "+this.percentage+"%<br/><br/>");
+                }
+            }
+ var s1=new Student;
+s1.setRollNumber=1;
+s1.name="Dilip patil";
+s1.setMarks1=89;
+s1.setMarks2=91;
+s1.setMarks3=90;
+s1.calculateTotalMarks();
+s1.calculatePercentage();
+s1.show();
+
+        </script>
+</body>
+</html>
