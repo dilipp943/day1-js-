@@ -1,0 +1,178 @@
+<html>
+    <head>
+        <style>
+        #spa2{
+            background-color: rgb(236, 15, 15);
+        }
+            </style>
+    <body>
+        <p1 id="name"style="color:red">Dilip patil</p1></br></br>
+       <button tye="button" onclick=myfun1()>Click here to change color</button> <hr><hr>
+       <h1 id="name2">Dilip patil</h1>
+       <button tye="button" onclick=myfun2()>Click here to change alignment</button> </br></br><hr><hr>
+       <p1 id="name3"style="color:white;background-color:blue;">Dilip patil</p1></br></br>
+       <button tye="button" onclick="myfun3()">Click here to reverse color</button> </br></br><hr><hr>
+      <div id="div">
+               <p>Hello,My name is Dilip Vilas Patil,I am from savda district Jalgaon.</p>
+               <p>I like to listen songs and most of time i listen songs.</p>
+               <p>I want to be an full stack developer and i will do it.</p>
+               <h3 id="demo"></h3>
+               <button tye="button" onclick=myfun4()>Click here to count and for background color</button> </br></br>
+            
+           </div>
+        </br><hr><hr>
+        <ol id="ol">
+            <li>yash</li>
+            <li>aditya</li>
+            <li>gaurav</li>
+            </ol>
+            <button tye="button" onclick=myfun5()>Click here to delete first name</button> </br></br><hr><hr>
+            
+       Enter any text:<input type="text" value="dilip" onchange="myfun6()"id="text"><span id="spa" ></span></br><hr><hr>
+       Enter any text:<input type="text" onchange="myfun7()"id="text1"><span id="spa1" ></span></br></br><hr><hr>
+       <form>
+        Enter Your Name:<input type="text" id="user"></br>
+        Red<input type="radio" onclick="myfun8(this.value)" value="red"  name="color"></br>
+            Blue<input type="radio" onclick="myfun8(this.value)"value="blue" name="color"></br>
+            purple<input type="radio" onclick="myfun8(this.value)"value="purple" name="color"></br>
+            </form>
+         </br><hr><hr>
+         <form style="background-color: chartreuse; border:3px solid red;">
+        Select Any Number<select id="id" onclick="myfun9(this.value)">
+              <option id="1"value="10">1</option>
+              <option id="2"value="12">2</option>
+              <option id="3"value="14">3</option>
+              <option id="4"value="16">4</option>
+              <option id="5"value="18">5</option>
+              <option id="6"value="20">6</option>
+              <option id="7"value="22">7</option>
+              <option id="8"value="24">8</option>
+              <option id="9"value="26">9</option>
+              <option id="10"value="28">10</option>
+              </select>
+             </form>
+             <p id="demo1" style="color:rgb(248, 8, 20) ;text-align: center;">Dilip Patil</p></br></br><hr><hr>
+             <form>
+                Enter Num1:<input type="text" id="num1"></br></br>
+                Enter Num2:<input type="text" id="num2"></br></br>
+                Sum:<input type="text" id="sum"></br></br>
+                Add<input type="radio" onclick="add()"  name="cal"></br>
+               subtract<input type="radio" onclick="sub()" name="cal"></br>
+                     </form><hr><hr>
+                     <form >
+                        Your Bill:<input type="text" id="n1" name="txt"></br></br>
+                         Harry Potter Rs.350<input type="checkbox" onchange="myfun10()" value="350" name="check" ></br>
+                         Half Girlfriend Rs.300<input type="checkbox" onchange="myfun10()" value="300" name="check" ></br>
+                         The Sun Rises Rs.450<input type="checkbox"  onchange="myfun10()" value="450" name="check"></br>
+                  
+                        </form><hr><hr>
+                         Enter password:<input type="text" onchange="myfun11()"id="pass"></br><span id="spa2" ></span></br></br><hr><hr>
+        <script>
+         function myfun1()
+         {
+             var x=document.getElementById("name");
+             x.style.color="blue";
+         }   
+         function myfun2()
+         {
+             var x=document.getElementById("name2");
+             x.style.textAlign="right";
+         }  
+         function myfun3()
+         {
+             var x=document.getElementById("name3");
+             x.style.color="blue";
+             x.style.backgroundColor="white";
+         } 
+           
+        function myfun4()
+         {
+        var x=document.getElementById("div");
+         var y=x.getElementsByTagName("p");   
+         var len=y.length;
+         document.getElementById("demo").innerHTML="The count of P tag is:"+len;
+         for(let i=0;i<len;i++)
+         {
+             y[i].style.backgroundColor="blue";
+         }
+
+         } 
+         function myfun5()
+         {
+             var x=document.getElementById("ol");
+             var y=x.firstElementChild;
+             x.removeChild(y);
+         }
+         function myfun6()
+         {
+         var x=document.getElementById("text").value;
+         if(x=="")
+         {
+            document.getElementById("spa").innerHTML="<h3><b>Text Box Can't Be Empty</b></h3>";
+            
+         }
+         }
+         function myfun7()
+         {
+         var x=document.getElementById("text1").value;
+         document.getElementById("spa1").innerHTML=x;
+         }
+         function myfun8(color)
+         {
+       var x=document.getElementById("user");
+            x.style.color=color;
+         }
+         function myfun9(f)
+         {
+       var x=document.getElementById("demo1");
+            x.style.fontSize=f;
+            x.style.backgroundColor="dodgerblue";
+         }
+         function add()
+         {
+            var n1=Number(document.getElementById("num1").value); 
+            var n2=Number(document.getElementById("num2").value);
+            document.getElementById("sum").value=n1+n2;
+        
+              
+         }
+         function sub()
+         {
+            var n1=Number(document.getElementById("num1").value); 
+            var n2=Number(document.getElementById("num2").value);
+            document.getElementById("sum").value=n1-n2;
+         }
+         function myfun10()
+         {
+               var x=document.getElementsByName("check");
+                document.getElementById("n1").value="";
+               var l= x.length;
+                var sum=0;
+                for(i=0;i<l;i++)
+                {
+                    if(x[i].checked)
+                    {
+                        sum=sum+Number(x[i].value);
+                    }
+                }
+                document.getElementById("n1").value=sum;
+         }
+         function myfun11()
+         {
+         var x=document.getElementById("pass").value;
+         var regex=/[A-Z]+[a-z]+[0-9]+[@#$%^&*]/;
+         if(!regex.test(x))
+         {
+              document.getElementById("spa2").innerHTML="**Password must contain one capital letter and one digit and one symbol";
+          
+         }
+         else
+        {
+            document.getElementById("spa2").innerHTML="**Password enter successfully";
+        }
+
+         }
+       
+        </script>
+    </body>
+</html>
